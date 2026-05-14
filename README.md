@@ -1,39 +1,68 @@
 # 🚀 AI Web Knowledge Summarizer - RAG System
 
-A professional web content analysis system powered by LlamaIndex and RAG (Retrieval-Augmented Generation), featuring intelligent summarization and automated study material generation.
 
-## 🎯 Features
+An advanced RAG (Retrieval-Augmented Generation) system that transforms any website into an interactive, searchable knowledge base. Powered by **LlamaIndex** and **Google Gemini**, this tool provides multi-level summarization, intelligent navigation, and automated study materials.
 
-*   **Multi-Tier Summarization**: Generates TL;DR, Medium, and Deep summaries based on user needs.
-*   **RAG-Powered Chat**: Interactive Q&A interface with source-backed responses from the analyzed website.
-*   **Automated Study Mode**: Intelligently generates Flashcards and Quizzes to help master web content.
-*   **Semantic Navigation**: Automatically structures lengthy articles into logical, navigable sections.
-*   **Anti-Bot Protection**: Implements custom headers and rotation to bypass common web scraping blocks (403 Forbidden).
-*   **Real-time Dashboard**: Built with Streamlit for a smooth, responsive, and professional user experience.
+---
 
-## 📋 Prerequisites
+## 🎯 Project Overview
+The **AI Web Knowledge Summarizer** allows users to input any URL (Wikipedia, blogs, research papers) and interact with the content in real-time. Instead of reading through pages of text, users can get instant summaries or ask specific questions backed by source-referenced data.
 
-*   **Python 3.9+**
-*   **Groq API Key** (Primary LLM provider for high-speed inference)
-*   **Google Gemini API Key** (Secondary provider/Multimodal support)
-*   **HuggingFace Token** (For local embedding models)
+## 🧠 Core Functionality
+1. **Smart Extraction**: Cleanly scrapes main content while removing ads, footers, and noise using `BeautifulSoup` and `LlamaIndex WebReader`.
+2. **Semantic Indexing**: Processes text into chunks (300-500 words) and builds a `Vector Store Index` for precise retrieval.
+3. **RAG Engine**: Executes real-time queries against the website’s content using Google Gemini API.
+
+## 🔥 Key Features
+
+### 📌 1. Tiered Smart Summarization
+Get the information you need at the depth you want:
+*   🟢 **TL;DR**: The "bottom line" in one single sentence.
+*   🟡 **Medium**: A concise paragraph covering the core concepts.
+*   🔴 **Deep**: A structured, section-by-section breakdown.
+
+### 🔍 2. Interactive RAG Chat
+Ask anything about the page:
+*   *"Explain the difference between X and Y"*
+*   *"What are the main requirements mentioned?"*
+*   The system provides direct answers with references to specific parts of the page.
+
+### 🧭 3. Smart Navigation
+A semantic "Table of Contents" that extracts:
+*   Original headers from the page.
+*   Relevant context and summaries for each section.
+
+### 🧪 4. Study Mode
+Automatically transforms any article into learning materials:
+*   **Flashcards**: Core terms and definitions.
+*   **Quizzes**: Generated questions to test your knowledge.
+*   **Summarized Notes**: Essential takeaways for quick review.
+
+---
+
+## 📦 System Architecture
+
+
+
+1.  **Input**: User provides a URL.
+2.  **Load & Clean**: Scrapes text and preserves metadata (headers, positions).
+3.  **Chunking**: Splits data into semantic segments.
+4.  **Indexing**: Generates embeddings and stores them in a Vector Index.
+5.  **Querying**: Matches user questions to the most relevant chunks and generates a response via Gemini.
+
+---
 
 ## 🛠️ Tech Stack
+*   **Language**: Python 3.9+
+*   **Framework**: [LlamaIndex](https://www.llamaindex.ai/) (Data Framework for LLMs)
+*   **LLM**: [Google Gemini API](https://ai.google.dev/)
+*   **Web Scraping**: BeautifulSoup4 / WebReader
+*   **UI**: Streamlit (Optional / Recommended)
 
-*   **LlamaIndex**: Core RAG framework for indexing and querying web data.
-*   **Streamlit**: Professional-grade web interface.
-*   **Groq / Gemini / OpenAI**: LLM orchestration.
-*   **HuggingFace**: Local embeddings for efficient semantic search.
-*   **BeautifulSoup4**: Robust web scraping and HTML parsing.
+## 🚀 Quick Start
 
-## 📦 Quick Start
-
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/shoham-dahan/ai-web-summarizer-rag.git](https://github.com/shoham-dahan/ai-web-summarizer-rag.git)
-    cd ai-web-summarizer-rag
-    ```
-
-2.  **Install dependencies:**
-    ```bash
-    pip install -r requirements.txt
+### 1. Installation
+```bash
+git clone [https://github.com/your-username/ai-web-knowledge-summarizer.git](https://github.com/your-username/ai-web-knowledge-summarizer.git)
+cd ai-web-knowledge-summarizer
+pip install -r requirements.txt
